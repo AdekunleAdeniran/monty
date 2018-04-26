@@ -25,12 +25,13 @@ void op_push(stack_t **stack, unsigned int line_number)
 
 	gvars.int_val = atoi(gvars.value);
 	new->n = gvars.int_val;
+	new->prev = NULL;
 
 	if (*stack == NULL)
 		new->next = NULL;
 	else
 		new->next = *stack;
-	new->prev = NULL;
 	if (new->next != NULL)
 		new->next->prev = new;
+	*stack = new;
 }
