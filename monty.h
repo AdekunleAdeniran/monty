@@ -9,7 +9,7 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #define delim "\n\r "
-
+#define UNUSED(x) (void)(x)
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -72,6 +72,8 @@ void op_pint(stack_t **stack, unsigned int line_number);
 void op_pop(stack_t **stack, unsigned int line_number);
 void op_swap(stack_t **stack, unsigned int line_number);
 void op_add(stack_t **stack, unsigned int line_number);
+void op_nop(stack_t **stack, unsigned int line_number);
+
 void free_l(stack_t *head);
 int find_op(stack_t **head);
 int tokenizer(char *str);
