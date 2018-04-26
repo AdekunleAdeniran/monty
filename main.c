@@ -16,7 +16,7 @@ int main(int argc, char **argv)
 	gvars.line_number = 0;
 	if (argc != 2)
 	{
-		fprintf("USAGE: monty file\n");
+		fprintf(stdout, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
 	fp = fopen(argv[1], "r");
