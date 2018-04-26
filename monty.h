@@ -41,12 +41,19 @@ typedef struct instruction_s
 } instruction_t;
 
 /** Variables */
+/**
+ * struct variables - global variables to be used
+ * @lineptr: lineptr for getline
+ * @line_number: returns what line_number is getline reading
+ * @value: string value of second argument in file
+ * @int_val: convering value to int
+ * @cmd: string value of first argument in file
+ * @ret_val: return value for main file
+ */
 typedef struct variables
 {
 	char *lineptr;
-	char **lines;
 	int line_number;
-	ssize_t len;
 	char *value;
 	int int_val;
 	char *cmd;
@@ -70,6 +77,6 @@ int find_op(stack_t **head);
 int check_delim(char c);
 int tok_num(char *string);
 int tokenizer(char *str);
+int check_val(char *str);
 
-
-#endif
+#endif /* Stack project */

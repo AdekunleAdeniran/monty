@@ -8,10 +8,13 @@
 int main(int argc, char **argv)
 {
 	FILE *fp;
-	int fd, read_file, line_number = 0;
-	char *lineptr = NULL, **lines;
-	ssize_t read;
-	size_t len = 0;
+	int fd;
+	stack_t *head = NULL;
+
+	gvars.lineptr = NULL;
+	gvars.len = 0;
+	gvars.line_number = 0;
+	gvars.ret_val = 1;
 
 	if (argc != 2)
 	{
@@ -24,14 +27,16 @@ int main(int argc, char **argv)
 		printf("Error: Can't open file %s\n", argv[1]);
 		return (EXIT_FAILURE);
 	}
-	while ((getline(&lineptr, &len, fp)) != -1)
+	while ((getline(&gvars.lineptr, &gvars.len, fp)) != -1)
 	{
-		line_number++;
-		lines = tokenizer(lineptr);
-		printf("Line Number: %d\n", line_number);
-		printf("token1: line[0] %s\n", lines[0]);
-		printf("token2: line[1] %s\n", lines[1]);
+		gvars.line_number++;
+		tokenizer(gvars.lineptr);
+		find_op(&head);
+		if (gvars.ret_val == -1)
+			break;
 	}
-
-	free (lineptr);
+	free (gvars.lineptr);
+	free_l(head);
+	fclose(fp);
+	return (gvars.ret_val);
 }
