@@ -1,5 +1,7 @@
 #include "monty.h"
 
+vars gvars;
+
 /**
  * main - runs monty interpreter
  * @argc: argument count
