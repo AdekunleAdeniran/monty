@@ -14,7 +14,7 @@ void op_push(stack_t **stack, __attribute__((unused))unsigned int line_number)
 		printf("Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
-	if (check_val(gvars.value) == -1 || gvars.value == NULL)
+	if (gvars.value == NULL || check_val(gvars.value) == -1)
 	{
 		printf("L%d: usage: push integer\n", gvars.line_number);
 		gvars.ret_val = -1;
