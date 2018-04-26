@@ -9,18 +9,24 @@
 void op_swap(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp;
+	int len = 0;
 
-	if (*stack == NULL || stack == NULL)
+	len = list_len(stack);
+
+	if (len < 2 || stack == NULL || *stack == NULL)
 	{
 		fprintf(stdout, "L%d: can't swap, stack too short\n",
 			line_number);
 		gvars.ret_val = -1;
 		return;
 	}
-	temp = (*stack)->next;
-	(*stack)->prev = temp;
-	(*stack)->next = temp->next;
-	temp->prev = NULL;
-	temp->next = *stack;
-	*stack = temp;
+	else
+	{
+		temp = (*stack)->next;
+		(*stack)->prev = temp;
+		(*stack)->next = temp->next;
+		temp->prev = NULL;
+		temp->next = *stack;
+		*stack = temp;
+	}
 }
