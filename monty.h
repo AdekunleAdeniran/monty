@@ -76,5 +76,6 @@ void free_l(stack_t *head);
 int find_op(stack_t **head);
 int tokenizer(char *str);
 int check_val(char *str);
+int list_len(stack_t **h);
 
 #endif /* MONTY_H */
