@@ -77,5 +77,6 @@ int find_op(stack_t **head);
 int tok_num(char *string);
 int tokenizer(char *str);
 int check_val(char *str);
+int check_delim(char c);
 
 #endif /* Stack project */
