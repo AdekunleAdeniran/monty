@@ -8,7 +8,7 @@
 #include <unistd.h>
 #include <sys/stat.h>
 #include <fcntl.h>
-#define delim "\n\r "
+#define delim "\n\r\t "
 #define UNUSED(x) (void)(x)
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
