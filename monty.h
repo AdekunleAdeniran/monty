@@ -79,4 +79,4 @@ int tokenizer(char *str);
 int check_val(char *str);
 int check_delim(char c);
 
-#endif /* Stack project */
+#endif /* MONTY_H */
