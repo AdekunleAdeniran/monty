@@ -75,9 +75,7 @@ void op_swap(stack_t **stack, unsigned int line_number);
 void op_add(stack_t **stack, unsigned int line_number);
 void free_l(stack_t *head);
 int find_op(stack_t **head);
-int tok_num(char *string);
 int tokenizer(char *str);
 int check_val(char *str);
-int check_delim(char c);
 
 #endif /* MONTY_H */
