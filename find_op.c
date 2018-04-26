@@ -22,12 +22,11 @@ int find_op(stack_t **head)
 			    strlen(f_ope[i].opcode)) == 0)
 		{
 			f_ope[i].f(head, gvars.line_number);
-			gvars.ret_val = 1;
 			return (1);
 		}
 		i++;
 	}
 	printf("L%d: unknown instruction %s\n", gvars.line_number, gvars.cmd);
 	gvars.ret_val = -1;
-	exit(EXIT_FAILURE);
+	return (-1);
 }
