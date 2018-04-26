@@ -10,7 +10,7 @@ void op_add(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp = *stack;
 
-	if (*stack == NULL || stack == NULL)
+	if (temp->next == NULL || *stack == NULL || stack == NULL)
 	{
 		fprintf(stdout, "L%d: can't add, stack too short\n",
 			line_number);
@@ -18,13 +18,6 @@ void op_add(stack_t **stack, unsigned int line_number)
 		return;
 	}
 
-	if (temp->next == NULL)
-	{
-		fprintf(stdout, "L%d: can't add, stack too short\n",
-			line_number);
-		gvars.ret_val = -1;
-		return;
-	}
 	temp->next->n += (*stack)->n;
 	*stack = (*stack)->next;
 	free(temp);
