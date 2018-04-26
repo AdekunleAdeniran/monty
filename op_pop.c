@@ -12,7 +12,7 @@ void op_pop(stack_t **stack, unsigned int line_number)
 
 	if (*stack == NULL)
 	{
-		fprintf(stdout, "L:%d: can't pop an empty stack\n",
+		fprintf(stdout, "L%d: can't pop an empty stack\n",
 			line_number);
 		gvars.ret_val = -1;
 		return;
