@@ -13,6 +13,7 @@ int find_op(stack_t **head)
 	instruction_t f_ope[] = {
 		{"push", op_push},
 		{"pall", op_pall},
+		{"pint", op_pint},
 		{NULL, NULL},
 	};
 
