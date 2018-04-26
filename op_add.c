@@ -9,8 +9,10 @@
 void op_add(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp = *stack;
+	int len = 0;
 
-	if (temp->next == NULL || stack == NULL || *stack == NULL)
+	len = list_len(stack);
+	if (len < 2 || stack == NULL || *stack == NULL)
 	{
 		fprintf(stdout, "L%d: can't add, stack too short\n",
 			line_number);
