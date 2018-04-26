@@ -5,7 +5,7 @@
  * @stack: pointer to stack
  * @line_number: unused
  */
-void op_push(stack_t **stack, __attribute__((unused))unsigned int line_number)
+void op_push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new = malloc(sizeof(stack_t));
 
@@ -17,7 +17,7 @@ void op_push(stack_t **stack, __attribute__((unused))unsigned int line_number)
 	}
 	if (gvars.value == NULL || check_val(gvars.value) == -1)
 	{
-		fprintf(stdout, "L%d: usage: push integer\n", gvars.line_number);
+		fprintf(stdout, "L%d: usage: push integer\n", line_number);
 		free(new);
 		gvars.ret_val = -1;
 		return;
