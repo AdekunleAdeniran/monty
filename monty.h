@@ -63,7 +63,7 @@ typedef struct variables
 
 /* global variables */
 extern vars gvars;
-vars gvars;
+
 
 /* Operators */
 void op_push(stack_t **stack, unsigned int line_number);
