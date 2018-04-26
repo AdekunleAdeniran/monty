@@ -74,7 +74,6 @@ void op_add(stack_t **stack, unsigned int line_number);
 void free_l(stack_t *head);
 
 int find_op(stack_t **head);
-int check_delim(char c);
 int tok_num(char *string);
 int tokenizer(char *str);
 int check_val(char *str);

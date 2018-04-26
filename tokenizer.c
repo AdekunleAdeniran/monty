@@ -1,24 +1,15 @@
 #include "monty.h"
 
 /**
- *
+ * tokenizer - create tokens for command and value
+ * @str: takes a string
+ * Return: 1 on success
  */
-char **tokenizer(char *string)
+int tokenizer(char *str)
 {
-	char *str_tok, **tokens;
-	int num_tokens = 0, i = 0;
-
-	num_tokens = tok_num(string);
-	tokens = malloc(sizeof(char *) * num_tokens);
-	if (tokens == NULL)
-		return (NULL);
-	str_tok = strtok(string, delim);
-	while (str_tok != NULL)
-	{
-		tokens[i] = str_tok;
-		i++;
-		str_tok = strtok(NULL, delim);
-	}
-	return (tokens);
-
+	gvars.cmd = strtok(str, delim);
+	gvars.value = strtok(NULL, delim);
+	if (gvars.value != NULL)
+		gvars.int_val = atoi(gvars.value);
+	return (1);
 }

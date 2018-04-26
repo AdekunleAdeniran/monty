@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * free_dlistint - frees node
+ * free_l - frees node
  * @head: pointer to first node
  */
 

@@ -9,9 +9,8 @@
 void op_pall(stack_t **stack, __attribute__((unused))unsigned int line_number)
 {
 	stack_t *current;
-	current = *stack;
 
-	printf("Printing values\n");
+	current = *stack;
 	while (current != NULL)
 	{
 		printf("%d\n", current->n);
