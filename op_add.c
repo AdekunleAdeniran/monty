@@ -19,9 +19,11 @@ void op_add(stack_t **stack, unsigned int line_number)
 		gvars.ret_val = -1;
 		return;
 	}
-
-	temp->next->n += (*stack)->n;
-	*stack = (*stack)->next;
-	free(temp);
-	(*stack)->prev = NULL;
+	else
+	{
+		temp->next->n += (*stack)->n;
+		*stack = (*stack)->next;
+		free(temp);
+		(*stack)->prev = NULL;
+	}
 }
