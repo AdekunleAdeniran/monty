@@ -12,7 +12,9 @@ int main(int argc, char **argv)
 {
 	FILE *fp;
 	stack_t *head = NULL;
+	ssize_t read = 0;
 	size_t len = 0;
+	int token_ret = 0;
 
 	gvars.lineptr = NULL;
 	gvars.line_number = 0;
@@ -27,17 +29,20 @@ int main(int argc, char **argv)
 		fprintf(stdout, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-	while ((getline(&gvars.lineptr, &len, fp)) != -1)
+	while ((read = getline(&gvars.lineptr, &len, fp)) != -1)
 	{
 		gvars.line_number++;
-		tokenizer(gvars.lineptr);
-		find_op(&head);
-		if (gvars.ret_val == -1)
+		token_ret = tokenizer(gvars.lineptr);
+		if (token_ret != -1)
 		{
-			free(gvars.lineptr);
-			free_l(head);
-			fclose(fp);
-			exit(EXIT_FAILURE);
+			find_op(&head);
+			if (gvars.ret_val == -1)
+			{
+				free(gvars.lineptr);
+				free_l(head);
+				fclose(fp);
+				exit(EXIT_FAILURE);
+			}
 		}
 	}
 	free(gvars.lineptr); free_l(head); fclose(fp);
