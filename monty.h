@@ -80,6 +80,6 @@ int find_op(stack_t **head);
 int tokenizer(char *str);
 int check_val(char *str);
 int list_len(stack_t **h);
-int newline_check(char *str)
+int newline_check(char *str);
 
 #endif /* MONTY_H */
