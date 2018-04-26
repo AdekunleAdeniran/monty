@@ -6,20 +6,22 @@
  * Return: stack with new sum and removed node
  *
  */
-void op_add(stack_t **stack, __attribute__((unused))unsigned int line_number)
+void op_add(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp = *stack;
 
 	if (*stack == NULL || stack == NULL)
 	{
-		printf("L%d: can't add, stack too short", gvars.line_number);
-		exit(EXIT_FAILURE);
+		fprintf(stdout, "L%d: can't add, stack too short", line_number);
+		gvars.ret_val = -1;
+		return;
 	}
 
 	if (temp->next == NULL)
 	{
-		printf("L%d: can't add, stack too short", gvars.line_number);
-		exit(EXIT_FAILURE);
+		fprintf(stdout, "L%d: can't add, stack too short", line_number);
+		gvars.ret_val = -1;
+		return;
 	}
 	temp->next->n += (*stack)->n;
 	*stack = (*stack)->next;
