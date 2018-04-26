@@ -40,7 +40,7 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-/** Variables */
+/* Variables */
 /**
  * struct variables - global variables to be used
  * @lineptr: lineptr for getline
@@ -60,11 +60,13 @@ typedef struct variables
 	int ret_val;
 } vars;
 
+
+/* global variables */
 extern vars gvars;
 vars gvars;
 
 
-/** Operators */
+/* Operators */
 void op_push(stack_t **stack, unsigned int line_number);
 void op_pall(stack_t **stack, unsigned int line_number);
 void op_pint(stack_t **stack, unsigned int line_number);
@@ -72,7 +74,6 @@ void op_pop(stack_t **stack, unsigned int line_number);
 void op_swap(stack_t **stack, unsigned int line_number);
 void op_add(stack_t **stack, unsigned int line_number);
 void free_l(stack_t *head);
-
 int find_op(stack_t **head);
 int tok_num(char *string);
 int tokenizer(char *str);
