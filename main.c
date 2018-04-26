@@ -28,9 +28,9 @@ int main(int argc, char **argv)
 	while ((getline(&gvars.lineptr, &len, fp)) != -1)
 	{
 		gvars.line_number++;
-		if (gvars.lineptr[0] != '#')
+		tokenizer(gvars.lineptr);
+		if (gvars.cmd[0] != '#')
 		{
-			tokenizer(gvars.lineptr);
 			find_op(&head);
 			if (gvars.ret_val == -1)
 			{
