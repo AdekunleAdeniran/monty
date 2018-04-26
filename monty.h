@@ -60,10 +60,8 @@ typedef struct variables
 	int ret_val;
 } vars;
 
-
 /* global variables */
 extern vars gvars;
-
 
 /* Operators */
 void op_push(stack_t **stack, unsigned int line_number);
@@ -76,10 +74,12 @@ void op_nop(stack_t **stack, unsigned int line_number);
 void op_sub(stack_t **stack, unsigned int line_number);
 void op_comment(stack_t **stack, unsigned int line_number);
 
+/* Helper */
 void free_l(stack_t *head);
 int find_op(stack_t **head);
 int tokenizer(char *str);
 int check_val(char *str);
 int list_len(stack_t **h);
+int newline_check(char *str)
 
 #endif /* MONTY_H */
