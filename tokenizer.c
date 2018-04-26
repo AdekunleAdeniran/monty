@@ -7,9 +7,15 @@
  */
 int tokenizer(char *str)
 {
+	if (newline_check(str) == 1)
+		return (-1);
+
 	gvars.cmd = strtok(str, delim);
-	gvars.value = strtok(NULL, delim);
-	if (gvars.value != NULL)
-		gvars.int_val = atoi(gvars.value);
+	if (gvars.cmd[0] != '\0')
+	{
+		gvars.value = strtok(NULL, delim);
+		if (gvars.value != NULL)
+			gvars.int_val = atoi(gvars.value);
+	}
 	return (1);
 }
