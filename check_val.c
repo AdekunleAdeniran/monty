@@ -9,7 +9,7 @@ int check_val(char *str)
 {
 	int i = 0;
 
-	while (str)
+	while (str[i])
 	{
 		if (str[i] > 47 && str[i] < 58)
 			i++;
