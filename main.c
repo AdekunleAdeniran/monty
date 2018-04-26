@@ -31,10 +31,13 @@ int main(int argc, char **argv)
 		tokenizer(gvars.lineptr);
 		find_op(&head);
 		if (gvars.ret_val == -1)
-			break;
+		{
+			free(gvars.lineptr);
+			free_l(head);
+			fclose(fp);
+			exit(EXIT_FAILURE);
+		}
 	}
-	free(gvars.lineptr);
-	free_l(head);
-	fclose(fp);
+	free(gvars.lineptr); free_l(head); fclose(fp);
 	return (gvars.ret_val);
 }
