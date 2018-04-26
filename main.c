@@ -8,11 +8,9 @@
 int main(int argc, char **argv)
 {
 	FILE *fp;
-	int fd;
 	stack_t *head = NULL;
-
+	size_t len = 0;
 	gvars.lineptr = NULL;
-	gvars.len = 0;
 	gvars.line_number = 0;
 	gvars.ret_val = 1;
 
@@ -27,7 +25,7 @@ int main(int argc, char **argv)
 		printf("Error: Can't open file %s\n", argv[1]);
 		return (EXIT_FAILURE);
 	}
-	while ((getline(&gvars.lineptr, &gvars.len, fp)) != -1)
+	while ((getline(&gvars.lineptr, &len, fp)) != -1)
 	{
 		gvars.line_number++;
 		tokenizer(gvars.lineptr);
