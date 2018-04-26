@@ -28,14 +28,17 @@ int main(int argc, char **argv)
 	while ((getline(&gvars.lineptr, &len, fp)) != -1)
 	{
 		gvars.line_number++;
-		tokenizer(gvars.lineptr);
-		find_op(&head);
-		if (gvars.ret_val == -1)
+		if (gvars.lineptr[0] != '#')
 		{
-			free(gvars.lineptr);
-			free_l(head);
-			fclose(fp);
-			exit(EXIT_FAILURE);
+			tokenizer(gvars.lineptr);
+			find_op(&head);
+			if (gvars.ret_val == -1)
+			{
+				free(gvars.lineptr);
+				free_l(head);
+				fclose(fp);
+				exit(EXIT_FAILURE);
+			}
 		}
 	}
 	free(gvars.lineptr); free_l(head); fclose(fp);
