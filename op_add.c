@@ -17,8 +17,8 @@ void op_add(stack_t **stack, unsigned int line_number)
 	{
 		fprintf(stdout, "L%d: can't add, stack too short\n",
 			line_number);
-		gvars.ret_val = -1;
-		return;
+		free_l(*stack);
+		exit(EXIT_FAILURE);
 	}
 	else
 	{
