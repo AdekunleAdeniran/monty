@@ -14,7 +14,7 @@ void op_sub(stack_t **stack, unsigned int line_number)
 	len = list_len(stack);
 	if (len < 2 || stack == NULL || *stack == NULL)
 	{
-		fprintf(stdout, "L%d: can't add, stack too short\n",
+		fprintf(stdout, "L%d: can't sub, stack too short\n",
 			line_number);
 		gvars.ret_val = -1;
 		return;
