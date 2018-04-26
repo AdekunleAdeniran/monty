@@ -53,7 +53,7 @@ typedef struct instruction_s
 typedef struct variables
 {
 	char *lineptr;
-	int line_number;
+	unsigned int line_number;
 	char *value;
 	int int_val;
 	char *cmd;
@@ -64,7 +64,6 @@ typedef struct variables
 /* global variables */
 extern vars gvars;
 vars gvars;
-
 
 /* Operators */
 void op_push(stack_t **stack, unsigned int line_number);
