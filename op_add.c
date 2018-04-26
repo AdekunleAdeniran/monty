@@ -12,14 +12,14 @@ void op_add(stack_t **stack, unsigned int line_number)
 
 	if (*stack == NULL || stack == NULL)
 	{
-		fprintf(stdout, "L%d: can't add, stack too short", line_number);
+		fprintf(stdout, "L%d: can't add, stack too short\n", line_number);
 		gvars.ret_val = -1;
 		return;
 	}
 
 	if (temp->next == NULL)
 	{
-		fprintf(stdout, "L%d: can't add, stack too short", line_number);
+		fprintf(stdout, "L%d: can't add, stack too short\n", line_number);
 		gvars.ret_val = -1;
 		return;
 	}
