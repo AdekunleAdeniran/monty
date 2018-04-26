@@ -14,17 +14,16 @@ int main(int argc, char **argv)
 
 	gvars.lineptr = NULL;
 	gvars.line_number = 0;
-	gvars.ret_val = 1;
 	if (argc != 2)
 	{
 		printf("USAGE: monty file\n");
-		return (EXIT_FAILURE);
+		exit(EXIT_FAILURE);
 	}
 	fp = fopen(argv[1], "r");
 	if (fp == NULL)
 	{
 		printf("Error: Can't open file %s\n", argv[1]);
-		return (EXIT_FAILURE);
+		exit(EXIT_FAILURE);
 	}
 	while ((getline(&gvars.lineptr, &len, fp)) != -1)
 	{
