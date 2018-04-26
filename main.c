@@ -29,16 +29,13 @@ int main(int argc, char **argv)
 	{
 		gvars.line_number++;
 		tokenizer(gvars.lineptr);
-		if (gvars.cmd[0] != '#')
+		find_op(&head);
+		if (gvars.ret_val == -1)
 		{
-			find_op(&head);
-			if (gvars.ret_val == -1)
-			{
-				free(gvars.lineptr);
-				free_l(head);
-				fclose(fp);
-				exit(EXIT_FAILURE);
-			}
+			free(gvars.lineptr);
+			free_l(head);
+			fclose(fp);
+			exit(EXIT_FAILURE);
 		}
 	}
 	free(gvars.lineptr); free_l(head); fclose(fp);
