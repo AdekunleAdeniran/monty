@@ -7,13 +7,13 @@
  */
 void op_rotl(stack_t **stack, __attribute__((unused))unsigned int line_number)
 {
-/*	int len = 0; */
+	int len = 0;
 	stack_t *front, *end;
 
-/*	len = list_len(stack); */
-/*	if (len < 2)
+	len = list_len(stack);
+	if (len < 2)
 		return;
-*/	end = *stack;
+	end = *stack;
 	while (end->next)
 		end = end->next;
 
