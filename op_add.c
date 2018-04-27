@@ -9,7 +9,7 @@
  */
 void op_add(stack_t **stack, unsigned int line_number)
 {
-	stack_t *temp = *stack;
+	stack_t *temp;
 	int len = 0;
 
 	len = list_len(stack);
@@ -22,6 +22,7 @@ void op_add(stack_t **stack, unsigned int line_number)
 	}
 	else
 	{
+		temp = *stack;
 		temp->next->n += (*stack)->n;
 		*stack = (*stack)->next;
 		free(temp);
