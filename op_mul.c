@@ -7,7 +7,7 @@
  * Return: stack with new sum and removed node
  *
  */
-void op_add(stack_t **stack, unsigned int line_number)
+void op_mul(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp = *stack;
 	int len = 0;
