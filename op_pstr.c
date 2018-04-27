@@ -20,7 +20,7 @@ void op_pstr(stack_t **stack, __attribute__((unused))unsigned int line_number)
 	while (current != NULL)
 	{
 		check = current->n;
-		if ((check >= 1 && check <= 127))
+		if (check >= 1 && check <= 127)
 			putchar(check);
 		else
 			break;
