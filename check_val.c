@@ -9,6 +9,8 @@ int check_val(char *str)
 {
 	int i = 0;
 
+	if (str[0] == '-')
+		i++;
 	while (str[i])
 	{
 		if (str[i] > 47 && str[i] < 58)
