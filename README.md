@@ -27,23 +27,34 @@ Monty 0.98 is a scripting language that is first compiled into Monty byte codes 
 
 ## Operator Instruction
 - op_push.c - pushes value to stack
-  -usage: push 123
+  - usage: push 123
 - op_pall.c - prints everything on the stack LIFO
-  -usage: pall
+  - usage: pall
 - op_pint.c - prints the top value of the stack
-  -usage: pint
+  - usage: pint
 - op_add.c - adds the top two elements of the stack
-  -usage: add
-- op_sub.c - subtracts the top two elements of the stack
-  -usage: sub
+  - usage: add
+- op_sub.c - subtracts the top element of the stack from the second top element of the stack
+  - usage: sub
 - op_swap.c - swaps the top two elements of the stack
-  -usage: swap
+  - usage: swap
 - op_pop.c - removes the top element of the stack
-  -usage: pop
+  - usage: pop
 - op_nop.c - doesn't do anything
-  -usage: nop
-- op_comment.c - ignores line starting with '#'
-  -usage: #this is a comment
-
+  - usage: nop
+- op_div - divides the second top element of the stack by the top element of the stack
+  - usage: div
+- op_mul - multiplies the second top element of the stack with the top element of the stack
+  - usage: mul
+- op_mod - computes the rest of the division of the second top element of the stack by the top element of the stack
+  - usage: mod
+- op_pchar - prints the char at the top of the stack, followed by a new line
+  - usage: pchar
+- op_pstr - prints the string starting at the top of the stack, followed by a new line.
+  - usage: pstr
+- op_rotl - rotates the stack to the top. The top element of the stack becomes the last one, and the second top element of the stack becomes the first one
+  - usage: rotl
+- op_rotr - rotates the stack to the bottom. The last element of the stack becomes the top element of the stack
+  - usage: rotr
 ### Authors
 Adekunle Adeniran and Adriel Tolentino
