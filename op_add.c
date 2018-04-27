@@ -9,17 +9,22 @@
  */
 void op_add(stack_t **stack, unsigned int line_number)
 {
-	stack_t *temp;
-	
-	if (!*stack || !(*stack)->next)
+	stack_t *temp = *stack;
+	int len = 0;
+
+	len = list_len(stack);
+	if (len < 2 || stack == NULL || *stack == NULL)
 	{
-		printf("L%d: can't add, stack too short\n", line_number);
-		free_l(*stack);
-		exit(EXIT_FAILURE);
+		fprintf(stdout, "L%d: can't add, stack too short\n",
+			line_number);
+		gvars.ret_val = -1;
+		return;
 	}
-	temp = (*stack)->next;
-	
-	temp->n += (*stack)->n;
-	free(*stack);
-	*stack = temp;
+	else
+	{
+		temp->next->n += (*stack)->n;
+		*stack = (*stack)->next;
+		free(temp);
+		(*stack)->prev = NULL;
+	}
 }
