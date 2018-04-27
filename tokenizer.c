@@ -11,6 +11,8 @@ int tokenizer(char *str)
 		return (-1);
 
 	gvars.cmd = strtok(str, delim);
+	if (gvars.cmd[0] == '#')
+		return (-1);
 	if (gvars.cmd[0] != '\0')
 	{
 		gvars.value = strtok(NULL, delim);
