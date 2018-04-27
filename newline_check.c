@@ -14,7 +14,7 @@ int newline_check(char *str)
 
 	while (str[i])
 	{
-		if (str[i] == ' ' && str[i + 1] != ' ')
+		if (str[i] != ' '  || str[i + 1] != ' ')
 			break;
 		i++;
 	}
