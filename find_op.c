@@ -20,6 +20,7 @@ int find_op(stack_t **head)
 		{"mul", op_mul},
 		{"nop", op_nop},
 		{"sub", op_sub},
+		{"pchar", op_pchar},
 		{"#", op_comment},
 		{NULL, NULL},
 	};

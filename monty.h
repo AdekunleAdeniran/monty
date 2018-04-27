@@ -74,6 +74,7 @@ void op_nop(stack_t **stack, unsigned int line_number);
 void op_sub(stack_t **stack, unsigned int line_number);
 void op_comment(stack_t **stack, unsigned int line_number);
 void op_mul(stack_t **stack, unsigned int line_number);
+void op_pchar(stack_t **stack, unsigned int line_number);
 
 /* Helper */
 void free_l(stack_t *head);
