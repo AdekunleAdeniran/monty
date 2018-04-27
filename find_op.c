@@ -24,7 +24,6 @@ int find_op(stack_t **head)
 		{"div", op_div},
 		{"mod", op_mod},
 		{"pstr", op_pstr},
-		{"rotl", op_rotl},
 		{NULL, NULL},
 	};
 
