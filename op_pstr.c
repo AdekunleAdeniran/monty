@@ -12,8 +12,10 @@ void op_pstr(stack_t **stack, __attribute__((unused))unsigned int line_number)
 	int check;
 
 	if (*stack == NULL || stack == NULL)
+	{
+		putchar('\n');
 		return;
-
+	}
 	current = *stack;
 	while (current != NULL)
 	{
