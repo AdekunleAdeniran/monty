@@ -1,14 +1,49 @@
-## 0x18. C - Stacks, Queues - LIFO, FIFO
+# Monty Bytecode Interpreter
 
-**What you should learn from this project**
-       At the end of this project you are expected to be able to explain to
-       anyone, without the help of Google:
+### Documentation
 
-* What is LIFO and FIFO
-* What is a stack, and when to use it
-* What is a queue, and when to use it
-* What are the common implementations of stacks and queues
-* What are the most common use cases of stacks and queues
-* What is the proper way to use global variables
-* How to work with git submodules
+## Installation
+- compile with the following:
+  - gcc -Wall -Werror -Wextra -pedantic *.c -o monty
+  - usage: ./monty <filename>
+    - filename should contain the Operators
+    - One operator per line
+    - spaces and newlines are ignored
+    - '#' sign represent comments and the line will be ignored
 
+## Monty Language
+Monty 0.98 is a scripting language that is first compiled into Monty byte codes (Just like Python). It relies on a unique stack, with specific instructions to manipulate it. The goal of this project is to create an interpreter for Monty ByteCodes files.
+
+- monty.h - contains all the structure and prototype
+- main.c - main function for monty interpreter
+
+## Helper
+- newline_check.c - checks if the first character in a line is a newline
+- tokenizer.c - tokenizes the command and value in the line
+- find_op.c - uses the first token (command) to find what operator(instruction) to use
+- list_len.c - returns the number of element in the stack
+- free_l.c - free everything on the stack
+- check_val.c - checks if everything on the second command are all digits
+
+## Operator Instruction
+- op_push.c - pushes value to stack
+  -usage: push 123
+- op_pall.c - prints everything on the stack LIFO
+  -usage: pall
+- op_pint.c - prints the top value of the stack
+  -usage: pint
+- op_add.c - adds the top two elements of the stack
+  -usage: add
+- op_sub.c - subtracts the top two elements of the stack
+  -usage: sub
+- op_swap.c - swaps the top two elements of the stack
+  -usage: swap
+- op_pop.c - removes the top element of the stack
+  -usage: pop
+- op_nop.c - doesn't do anything
+  -usage: nop
+- op_comment.c - ignores line starting with '#'
+  -usage: #this is a comment
+
+### Authors
+Adekunle Adeniran and Adriel Tolentino
