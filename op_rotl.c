@@ -11,7 +11,7 @@
 void op_rotl(stack_t **stack, unsigned int line_number)
 {
 	UNUSED(line_number);
-	int i = 0, len = 0;
+	int len = 0;
 	stack_t *current, *back, *front, *front2nd;
 
 	if (len < 1)
