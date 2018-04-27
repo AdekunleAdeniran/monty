@@ -30,7 +30,7 @@ int find_op(stack_t **head)
 
 	while (f_ope[i].opcode != NULL)
 	{
-		if (strcmp(gvars.cmd, f_ope[i].opcode) == 0)
+		if (strncmp(gvars.cmd, f_ope[i].opcode, strlen(gvars.cmd)) == 0)
 		{
 			f_ope[i].f(head, gvars.line_number);
 			return (1);
