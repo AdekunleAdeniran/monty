@@ -11,14 +11,14 @@ void op_add(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp;
 	
-	if (stack == NULL || *stack == NULL)
+	if (!*stack || !(*stack)->next)
 	{
-		fprintf(stdout, "L%d: can't add, stack too short\n",
-			line_number);
+		printf("L%d: can't add, stack too short\n", line_number);
 		free_l(*stack);
 		exit(EXIT_FAILURE);
 	}
 	temp = (*stack)->next;
+	
 	temp->n += (*stack)->n;
 	free(*stack);
 	*stack = temp;
