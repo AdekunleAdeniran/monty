@@ -17,6 +17,7 @@ int find_op(stack_t **head)
 		{"pop", op_pop},
 		{"swap", op_swap},
 		{"add", op_add},
+		{"mul", op_mul},
 		{"nop", op_nop},
 		{"sub", op_sub},
 		{"#", op_comment},
