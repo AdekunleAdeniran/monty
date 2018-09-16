@@ -1,6 +1,9 @@
 #ifndef MONTY_H
 #define MONTY_H
 
+/**
+ * Libaries
+ */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -10,6 +13,7 @@
 #include <fcntl.h>
 #define delim "\n\r\t "
 #define UNUSED(x) (void)(x)
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -58,6 +62,7 @@ typedef struct variables
 	int int_val;
 	char *cmd;
 	int ret_val;
+	char *flag;
 } vars;
 
 /* global variables */
@@ -79,6 +84,8 @@ void op_div(stack_t **stack, unsigned int line_number);
 void op_pstr(stack_t **stack, unsigned int line_number);
 void op_rotl(stack_t **stack, unsigned int line_number);
 void op_rotr(stack_t **stack, unsigned int line_number);
+void op_queue(stack_t **stack, unsigned int line_number);
+void op_stack(stack_t **stack, unsigned int line_number);
 
 /* Helper */
 void free_l(stack_t *head);
