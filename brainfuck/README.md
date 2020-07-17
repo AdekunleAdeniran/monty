@@ -14,15 +14,15 @@ Brainfuck simply requires one to break commands into microscopic steps.
 
 **Exercises**
 
-**16. Holberton**
+**16. notrebloh**
 
-      Write a Brainf*ck script that prints Holberton, followed by
+      Write a Brainf*ck script that prints notrebloh, followed by
       a new line.
 
 ```
 Usage:
-user@ubuntu:bf$ bf 1000-holberton.bf
-Holberton
+user@ubuntu:bf$ bf 1000-notrebloh.bf
+notrebloh
 user@ubuntu:bf$
 ```
 
